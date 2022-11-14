@@ -10,7 +10,7 @@ public class ScreenshotHook {
 
     private static final String PNG_FILE_EXTENSION = "image/png";
 
-    @After
+    @After(order = 10)
     public void takeScreenshot(Scenario scenario) {
         //TODO need to remove, for debugging
         System.out.println("Scenario: " + scenario);
