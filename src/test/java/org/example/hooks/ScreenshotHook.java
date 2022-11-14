@@ -12,11 +12,6 @@ public class ScreenshotHook {
 
     @After(order = 10)
     public void takeScreenshot(Scenario scenario) {
-        //TODO need to remove, for debugging
-        System.out.println("Scenario: " + scenario);
-        System.out.println("Driver: " + DriverManager.getDriver());
-        System.out.println("Scenario name: " + scenario.getName());
-
         scenario.attach(((TakesScreenshot) DriverManager.getDriver()).getScreenshotAs(OutputType.BYTES),
                 PNG_FILE_EXTENSION, scenario.getName());
     }
