@@ -24,7 +24,9 @@ pipeline {
         }
         stage("run ui tests") {
             steps {
-                sh "mvn clean test -DCUCUMBER_FILTER_TAGS=${suite} -Dbrowser=${browser}"
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh "mvn clean test -DCUCUMBER_FILTER_TAGS=${suite} -Dbrowser=${browser}"
+                }
             }
         }
         stage("reports") {
