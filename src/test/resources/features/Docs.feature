@@ -9,6 +9,7 @@ Feature: As a user I want to get ability to user Docs pages
     Then there are 10 items in the left-side menu
     And left-side menu contains the following links
       | Installation                 |
+      | Installation                 |
       | Guides                       |
       | Professional Services        |
       | Cucumber                     |
